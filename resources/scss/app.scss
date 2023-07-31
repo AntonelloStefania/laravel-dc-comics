@@ -1,1 +1,109 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+
+    .upper-header {
+        background-color: #0282F9;
+        padding-right: 5rem;
+
+        a {
+            color: white;
+            font-size: 10px;
+
+
+        }
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .s-bar {
+        border: none;
+    }
+
+    .s-control {
+        border-bottom: 2px solid #0282F9;
+        height: 25px;
+
+        i {
+            color: #464646;
+            font-weight: bold;
+        }
+    }
+
+    li {
+        font-size: 12px;
+
+        padding: 0 5px;
+
+        align-self: center;
+
+        a {
+            color: #464646 !important;
+        }
+    }
+}
+
+.label-blu {
+    width: 155px;
+    top: 0;
+    transform: translateY(-250%);
+}
+
+.footer-top {
+    background-color: #0282F9;
+    color: white;
+    height: 70px;
+
+    .footer-icons {
+        width: 80px;
+        height: 40px
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+footer {
+    span {
+        font-size: 12px
+    }
+
+
+    .footer-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bottom-footer {
+        background-color: #303030;
+        height: 70px;
+
+    }
+
+}
+
+.jumbotron {
+
+
+    img {
+        width: 100%;
+        height: 450px;
+        aspect-ratio: 4/2;
+        object-fit: cover;
+        object-position: top;
+    }
+
+}

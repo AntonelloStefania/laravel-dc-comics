@@ -9,7 +9,7 @@
                    
                    @foreach($comics as $comic)
                    
-                        <div class="card col-3 m-2 d-flex flex-column justify-content-between">
+                        <div class="card col-12 col-md-5 col-lg-3 m-2 d-flex flex-column justify-content-between">
                             <img src="{{$comic->thumb}}" class="h-75 card-img-top img-fluid" alt="{{$comic->thumb2}}">
                             <div class="p-3 card-text text-center">
                                 <h4>{{$comic->title}}</h4>
