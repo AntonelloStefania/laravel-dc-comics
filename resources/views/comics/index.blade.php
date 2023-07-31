@@ -15,7 +15,7 @@
                                 <h4>{{$comic->title}}</h4>
                                 <h6 class="py-3">{{$comic->series}}</h6>
                             </div>
-                            <a href="{{ route('show', $comic->id) }}" class="btn btn-sm btn-warning w-50">MORE</a>
+                            <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-warning w-50">MORE</a>
                         </div>
                    @endforeach
                 </div>
