@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ComicController as ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
 */
+Route::resource('/', ComicController::class);
 
-Route::get('/', function () {
-    return view('home');
-});
-
-//Route::php artisan make:model NomeModello -rcmsresource('comics', ComicsController::class);
+//Route::get('/', [ComicController::class, 'index'])->name('home');
