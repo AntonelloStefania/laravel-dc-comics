@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+//Route::php artisan make:model NomeModello -rcmsresource('comics', ComicsController::class);
