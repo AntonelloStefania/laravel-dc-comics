@@ -20,6 +20,7 @@
                             </div>
                             <div class="d-flex justify-content-center pb-2">
                                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-warning w-50">MORE</a>
+                                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-sm btn-danger w-50">UPDATE</a>
                             </div>
                         </div>
                    @endforeach
