@@ -5,7 +5,7 @@
     <main class="bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-end py-4">
                     <a href="{{route('comics.create')}}" class="btn btn-primary btn-sm">Add Comics</a>
                 </div>
                 <div class="col-12 d-flex flex-wrap justify-content-center">

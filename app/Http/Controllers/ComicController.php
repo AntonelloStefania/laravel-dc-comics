@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
-//use Illuminate\Http\Request;
+
+use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
@@ -37,9 +38,20 @@ class ComicController extends Controller
      * @param  \App\Http\Requests\StoreComicRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $comic = new Comic();
+        $comic->thumb = $form_data['thumb'];
+        $comic->title =$form_data['title'];
+        $comic->series=$form_data['series'];
+        $comic->price=$form_data['price'];
+        $comic->type=$form_data['type'];
+
+        $comic->save();
+
+        return redirect()->route('comics.index');
     }
 
     /**
