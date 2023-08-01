@@ -11,7 +11,6 @@
                 <div class="col-12 d-flex flex-wrap justify-content-center">
                    
                    @foreach($comics as $comic)
-                   
                         <div class="card col-12 col-md-5 col-lg-3 m-2 d-flex flex-column justify-content-between">
                             <img src="{{$comic->thumb}}" class="h-75 card-img-top img-fluid" alt="{{$comic->thumb2}}">
                             <div class="p-3 card-text text-center">
@@ -19,8 +18,17 @@
                                 <h6 class="py-3">{{$comic->series}}</h6>
                             </div>
                             <div class="d-flex justify-content-around pb-2">
-                                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-warning w-25">MORE</a>
-                                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-sm btn-primary w-25">UPDATE</a>
+                                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-sm btn-warning w-25"><i class="fa-solid fa-circle-info" style="color: #292828;"></i></a>
+                                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-sm btn-outline-primary w-25"><i class="fa-regular fa-pen-to-square"></i></a>
+                            </div>
+                            <div class="text-center my-2">
+                                <form action="{{route('comics.destroy', $comic->id)}}" onsubmit="return confirm('Press ok to confirm')" class="d-block" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-outline-danger w-25">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                    @endforeach

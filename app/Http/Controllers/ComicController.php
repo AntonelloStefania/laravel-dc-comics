@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +41,8 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
+        //$form_data = $request->all();
 
         $comic = new Comic();
         $comic->thumb = $form_data['thumb'];
@@ -87,7 +89,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
+        //$form_data = $request->all();
 
         $comic->update($form_data);
 
@@ -102,6 +105,30 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
+    }
+
+    public function validation($data){
+        $validator=Validator::make($data,
+        [
+            'title'=> 'required|max:255',
+            'type'=> 'max:50',
+            'price'=> 'required|max:10',
+            'series'=> 'max:100',
+        ],
+        [
+            'title.required'=>'Title needed',
+            'title.max'=>'Title must contain less than :max character',
+            'type.max'=>'Type must contain less than :max character',
+            'price.required'=>'Price is required',
+            'price.max'=>'Price can\'t contain more than :max character',
+            'series.max'=>'Series can\'t be longer than :max character',
+        ]
+        )->validate();
+        return $validator;
     }
 }
+
+
+
