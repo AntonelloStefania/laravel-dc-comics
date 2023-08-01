@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 my-5 text-center">
-                <img src="{{$comic->thumb}}" alt="{{$comic->thumb2}}">
+                <img src="@if(!empty($comic->thumb)) {{$comic->thumb}} @else https://static.posters.cz/image/750/locandine-film-in-plexiglass-dc-comics-justice-league-heroic-i51233.jpg @endif" alt="{{$comic->thumb2}}">
                 <div class="py-4">
                     <h3 class="text-center">{{$comic->title}}</h3>
                     <h5>{{$comic->series}}</h5>

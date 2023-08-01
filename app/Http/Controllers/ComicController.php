@@ -111,13 +111,14 @@ class ComicController extends Controller
 
     public function validation($data){
         $validator=Validator::make($data,
-        [
+        [   
+            'thumb'=> 'nullable',
             'title'=> 'required|max:255',
             'type'=> 'max:50',
             'price'=> 'required|max:10',
             'series'=> 'max:100',
         ],
-        [
+        [   
             'title.required'=>'Title needed',
             'title.max'=>'Title must contain less than :max character',
             'type.max'=>'Type must contain less than :max character',
