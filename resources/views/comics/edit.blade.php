@@ -6,7 +6,7 @@
         <div class="container-fluid bg-dark">
             <div class="row justify-content-center">
                 <div class="col-4 text-white  ">
-                    <form action="" method="POST">
+                    <form action="{{route('comics.update', $comic->id)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group my-5 d-flex flex-column text-center">
