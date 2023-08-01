@@ -29,7 +29,9 @@
                             <label for="" class="control-label mb-3">
                                 Titolo:
                             </label>
-                          
+                            
+                            <input class="ps-3 form-control" type="text" id="title" name="title" placeholder="title">
+
                         </div>
 
 
